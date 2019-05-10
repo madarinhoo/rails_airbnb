@@ -1,0 +1,38 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: containers/rails/Dockerfile
+    env_file: containers/env
+    command: bash -c "rails assets:precompile db:create db:migrate && pumactl -F ./containers/rails/puma.rb start"
+    volumes:
+      - .:/webapp:cached
+      - public-data:/webapp/public
+      - tmp-data:/webapp/tmp
+      - log-data:/webapp/log
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
+  db:
+    restart:
+      always
+    build:
+      context: .
+      dockerfile: containers/mysql/Dockerfile
+    environment:
+      - MYSQL_ROOT_PASSWORD=passw0rd
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./containers/mysql:/docker-entrypoint-initdb.d
+    ports:
+      - 43306:3306
+
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
