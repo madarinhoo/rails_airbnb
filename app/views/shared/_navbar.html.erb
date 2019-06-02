@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <a class="navbar-brand" href="#">AirPikachu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
         <% else %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag avatar_url(current_user), class: 'rounded-circle avatar_small' %>&nbsp;
+              <%= image_tag avatar_url(current_user), class: 'rounded-circle avatar-small' %>&nbsp;
               <%= current_user.fullname %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
