@@ -60,6 +60,8 @@ Rails.application.configure do
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.file_watcher = ActiveSupport::FileUpdateChecker
 
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
+
   config.action_mailer.default_url_options = { host: '192.168.99.100', port: 3000 }
 
   config.action_mailer.delivery_method = :smtp

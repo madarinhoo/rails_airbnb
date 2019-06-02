@@ -16,6 +16,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -40,3 +43,4 @@ gem 'toastr-rails', '~> 1.0'
 gem 'dotenv-rails'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
+gem 'paperclip', '~> 5.1.0'
