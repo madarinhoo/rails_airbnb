@@ -11,10 +11,26 @@
             <div class="card-body">
                 <div class="container">
                     <div class="row">
-                        <div class="col-offset-md-3 col-md-6">
-                            <!-- BODY -->
+                        <div class="offset-md-3 col-md-6">
+
+                            <%= form_for @room, url: room_photos_path(@room), method: 'post', html: {multipart: true} do |f| %>
+                                <div class="form-group">
+                                    <span class="btn btn-default btn-file text-babu">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        Select Photos<br />
+                                        <%= file_field_tag 'images[]', type: :file, multiple: true %>
+                                    </span>
+                                </div>
+
+                                <div class="text-center">
+                                    <%= f.submit 'Add Photos', class: 'btn btn-form' %>
+                                </div>
+                            <% end %>
+
                         </div>
                     </div>
+
+                    <div id="photos"><%= render 'photos/photos_list' %></div>
                 </div>
             </div>
 
