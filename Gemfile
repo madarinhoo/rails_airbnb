@@ -38,3 +38,5 @@ gem 'devise', '~> 4.2'
 
 gem 'toastr-rails', '~> 1.0'
 gem 'dotenv-rails'
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-facebook', '~> 4.0'
