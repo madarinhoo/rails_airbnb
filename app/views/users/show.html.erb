@@ -6,8 +6,15 @@
         <div class="card">
             <div class="card-header">Verification</div>
             <div class="card-body">
-            Email Address<br />
-            Phone Number
+                <ul class="sidebar-list">
+                    <% if @user.confirmation_token %>
+                        <li>Email Address <span class='float-right icon-babu'><i class='fa fa-check-circle'></i></span></li>
+                    <% end %>
+                    <% if @user.provider %>
+                        <li>Facebook <span class='float-right icon-babu'><i class='fa fa-check-circle'></i></span></li>
+                    <% end %>
+                    <li>Phone Number <span class='float-right icon-babu'><i class='fa fa-check-circle'></i></span></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -17,6 +24,23 @@
 
         <div class="description row-space-3">
             <%= @user.description %>
+        </div>
+
+        <h4>Listings (<%= @rooms.length %>)</h4><br>
+
+        <div class="row">
+            <% @rooms.each do |room| %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header preview">
+                            <%= image_tag room.cover_photo(:medium) %>
+                        </div>
+                        <div class="card-body">
+                            <%= link_to room.listing_name, room %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>
