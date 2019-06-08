@@ -1,12 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
-    <a class="navbar-brand" href="#">AirPikachu</a>
+    <%= link_to 'AirPikachu', root_path, class: 'navbar-brand' %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto navbar-right">
+        <li>
+          <button class="btn btn-form btn-small mt-1">
+            <%= link_to 'Become a host', new_room_path, style: 'color: white; text-decoration: none;'%>
+          </button>
+        </li>
         <% if !user_signed_in? %>
           <li class='nav-item'><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
           <li class='nav-item'><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li>
@@ -17,10 +22,10 @@
               <%= current_user.fullname %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Manage Listings</a>
-              <a class="dropdown-item" href="#">List Your Spaces</a>
-              <a class="dropdown-item" href="#">Your Reservations</a>
-              <a class="dropdown-item" href="#">Your Trips</a>
+              <%= link_to 'Manage Listing', rooms_path, class: 'dropdown-item' %>
+              <%= link_to 'List Your Space', new_room_path, class: 'dropdown-item' %>
+              <%= link_to 'Your Reservations', your_reservations_path, class: 'dropdown-item' %>
+              <%= link_to 'Your Trips', your_trips_path, class: 'dropdown-item' %>
               <div class="dropdown-divider"></div>
               <%= link_to 'Edit Profile', edit_user_registration_path, class: 'dropdown-item' %>
               <%= link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete %>
