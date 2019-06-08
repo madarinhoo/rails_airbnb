@@ -1,3 +1,16 @@
+GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: 544bcdd7871e118faa4dfa925576521b120d073c
+  specs:
+    polyamorous (2.1.1)
+      activerecord (>= 5.0)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
+      polyamorous (= 2.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -179,6 +192,8 @@ GEM
     pry-byebug (3.7.0)
       byebug (~> 11.0)
       pry (~> 0.10)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.7)
@@ -293,8 +308,10 @@ DEPENDENCIES
   omniauth-facebook (~> 4.0)
   paperclip (~> 5.1.0)
   pry-byebug
+  pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
+  ransack!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
