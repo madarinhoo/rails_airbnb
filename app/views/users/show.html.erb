@@ -28,20 +28,7 @@
 
         <h4>Listings (<%= @rooms.length %>)</h4><br>
 
-        <div class="row">
-            <% @rooms.each do |room| %>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header preview">
-                            <%= image_tag room.cover_photo(:medium) %>
-                        </div>
-                        <div class="card-body">
-                            <%= link_to room.listing_name, room %>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-        </div>
+        <%= render partial: 'rooms/rooms_list', locals: {rooms: @rooms}%>
         <br>
 
         <h4>Reviews From Guests (<%= @guest_reviews.count %>)</h4>
