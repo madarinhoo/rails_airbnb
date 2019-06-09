@@ -28,7 +28,30 @@ a {
 .navbar {
     z-index: 999;
     background-color: #fff;
-    margin-bottom: 20px;
+}
+
+.navbar.second-navbar {
+    background-color: #565a5c;
+    z-index: 900;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .nav-item {
+        .nav-link {
+            color: #999;
+
+            &:hover {
+                color: #222;
+            }
+        }
+    }
+
+    .nav-item.active {
+        background-color: #cacccd;
+        .nav-link {
+            color: #222;
+        }
+    }
 }
 
 .navbar .navbar-brand {
