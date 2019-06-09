@@ -40,8 +40,8 @@ class User < ApplicationRecord
   end
 
   def send_pin
-    @client = Twilio::REST::Client.new
-    @client.messages.create(
+    client = Twilio::REST::Client.new
+    client.messages.create(
       from: ENV['TWILIO_PHONE_NUMBER'],
       to: self.phone_number,
       body: "Your pin is #{self.pin}"
