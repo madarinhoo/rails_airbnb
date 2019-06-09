@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-3 ">
+        <div class="center">
+            <%= image_tag avatar_url(current_user), class: 'avatar-full' %>
+        </div>
+        <div class="card">
+            <div class="card-header"><%= current_user.fullname %></div>
+            <div class="card-body">
+                <ul class="sidebar-list">
+                    <% if current_user.confirmation_token %>
+                        <li>Email Address <span class='float-right icon-babu'><i class='fa fa-check-circle'></i></span></li>
+                    <% end %>
+                    <% if current_user.provider %>
+                        <li>Facebook <span class='float-right icon-babu'><i class='fa fa-check-circle'></i></span></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <!-- NOTIFICATION -->
+        <div class="card mb-3">
+            <div class="card-header">Notifications</div>
+            <div class="card-body">
+            </div>
+        </div>
+
+        <!-- YOUR LISTINGS -->
+        <div class="card">
+            <div class="card-header">Your Listings (<%= @rooms.length %>)</div>
+            <div class="card-body">
+                <%= render partial: 'rooms/rooms_list', locals: {rooms: @rooms}%>
+            </div>
+        </div>
+    </div>
+</div>
