@@ -62,12 +62,12 @@ Rails.application.configure do
 
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
 
-  config.action_mailer.default_url_options = { protocol: 'https', host: '192.168.99.100', port: 3000 }
 
+  config.action_mailer.default_url_options = { protocol: 'https', host: '192.168.99.100', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: 587,
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    port: ENV['MAILGUN_SMTP_PORT'],
     domain: 'sandbox00688a973eca47468f43ed4a942f5ea6.mailgun.org',
     authentication: 'plain',
     user_name: ENV['MY_MAILGUN_ADDRESS'],
