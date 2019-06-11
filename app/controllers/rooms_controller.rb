@@ -62,7 +62,7 @@ class RoomsController < ApplicationController
   # RESERVATIONS
   def preload
     today = Date.today
-    reservations = @room.reservations.where('start_date >= ? OR end_date >= ?', today, today)
+    reservations = @room.reservations.where('(start_date >= ? OR end_date >= ?) AND status = ?', today, today, 1)
 
     render json: reservations
   end
@@ -80,7 +80,7 @@ class RoomsController < ApplicationController
 
   private
     def is_conflict(start_date, end_date, room)
-      check = room.reservations.where('? < start_date AND end_date < ?', start_date, end_date)
+      check = room.reservations.where('(? < start_date AND end_date < ?) AND status = ?', start_date, end_date, 1)
       check.size > 0 ? true : false
     end
 
@@ -97,6 +97,6 @@ class RoomsController < ApplicationController
     end
 
     def room_params
-      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
+      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active, :instant)
     end
 end
