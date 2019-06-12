@@ -1,6 +1,7 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "toastr";
+@import "fullcalendar";
 
 body {
     color: #565a5c;
@@ -370,4 +371,35 @@ a {
 .banner {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+// CALENDAR
+.fc-content.Waiting {
+    background-color: #c9cc6d;
+}
+
+.fc-past {
+    background-color: lightgray;
+}
+
+.fc-day {
+    position: relative;
+}
+
+.fc-content {
+    background-color: #00a699;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.fc-event {
+    border: 0px;
+    background-color: transparent;
+}
+
+.fc-title {
+    font-size: 14px;
+    position: relative;
+    top: 7px;
+    left: 20px;
 }
