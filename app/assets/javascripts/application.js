@@ -14,8 +14,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs
-//= require jquery
-//= require jquery_ujs
+// require jquery
+// require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui/slider
 //= require toastr
