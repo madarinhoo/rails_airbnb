@@ -419,3 +419,69 @@ a {
     bottom: 2px;
     right: 2px;
 }
+
+// PAYMENT FORM
+  #add-card form {
+    width: 480px;
+    margin: 20px auto;
+  }
+
+  #add-card label {
+    position: relative;
+    color: #6A7C94;
+    font-weight: 400;
+    height: 48px;
+    line-height: 48px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  #add-card label > span {
+    float: left;
+  }
+
+  #add-card .field {
+    background: white;
+    box-sizing: border-box;
+    font-weight: 400;
+    border: 1px solid #CFD7DF;
+    border-radius: 24px;
+    color: #32315E;
+    outline: none;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    cursor: text;
+    width: 76%;
+    float: right;
+  }
+
+  #add-card .field::-webkit-input-placeholder { color: #CFD7DF; }
+  #add-card .field::-moz-placeholder { color: #CFD7DF; }
+  #add-card .field:-ms-input-placeholder { color: #CFD7DF; }
+
+  #add-card .field:focus,
+  #add-card .field.StripeElement--focus {
+    border-color: #F99A52;
+  }
+
+  #add-card .outcome {
+    float: left;
+    width: 100%;
+    padding-top: 8px;
+    min-height: 20px;
+    text-align: center;
+  }
+
+  #add-card .success, .error {
+    display: none;
+    font-size: 13px;
+  }
+
+  #add-card .success.visible, .error.visible {
+    display: inline;
+  }
+
+  #add-card .error {
+    color: #E4584C;
+  }

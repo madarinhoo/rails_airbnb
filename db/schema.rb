@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_063621) do
+ActiveRecord::Schema.define(version: 2019_06_14_134835) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "day"
@@ -107,6 +107,8 @@ ActiveRecord::Schema.define(version: 2019_06_13_063621) do
     t.text "description"
     t.string "pin"
     t.boolean "phone_verified"
+    t.string "stripe_id"
+    t.string "merchant_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -50,6 +50,7 @@
         <li class='nav-item <% if current_page?(dashboard_path) %>active<% end %>'><%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %></li>
         <li class='nav-item <% if current_page?(rooms_path) %>active<% end %>'><%= link_to 'Manage Listings', rooms_path, class: 'nav-link' %></li>
         <li class='nav-item <% if current_page?(rooms_path) %>active<% end %>'><%= link_to 'Host Calendar', host_calendar_path, class: 'nav-link' %></li>
+        <li class='nav-item <% if current_page?(payment_method_path) %>active<% end %>'><%= link_to 'Account Settings', payment_method_path, class: 'nav-link' %></li>
       </ul>
     </div>
   </nav>
