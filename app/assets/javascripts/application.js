@@ -22,4 +22,5 @@
 //= require moment
 //= require fullcalendar
 //= require activestorage
+//= require card
 //= require_tree .
