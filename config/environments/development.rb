@@ -62,6 +62,13 @@ Rails.application.configure do
 
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
 
+  config.action_cable.url = 'wss://192.168.99.100:3000/cable'
+
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
 
   config.action_mailer.default_url_options = { protocol: 'https', host: '192.168.99.100', port: 3000 }
   config.action_mailer.delivery_method = :smtp
