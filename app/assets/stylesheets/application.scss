@@ -485,3 +485,12 @@ a {
   #add-card .error {
     color: #E4584C;
   }
+
+  .badge {
+    background-color: #ff515f;
+    position: relative;
+    top: -15px;
+    left: -5px;
+    color: white;
+    border-radius: 0.5rem;
+  }
